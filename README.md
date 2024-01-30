@@ -6,6 +6,10 @@ Explaining the behavior of graph neural networks (GNNs) has become critical due 
 
 ![screenshot](screenshot.png)
 
+# Demo Video
+
+<a href="https://youtu.be/q9d7ldulIuQ" target="_blank"><img alt="GVEX Demo" src="video.png" width="300"/></a>
+
 # Usage
 
 ## (1)  front-end
