@@ -16,7 +16,9 @@ from torch_geometric.data import Data
 from torch_geometric.data import Batch
 from torch_geometric.utils import add_remaining_self_loops, to_scipy_sparse_matrix, \
     k_hop_subgraph, to_networkx, subgraph
-
+import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(current_dir)
 from gnnNets import get_gnnNets
 from visualization import PlotUtils
 from dataset import get_dataset, get_dataloader
