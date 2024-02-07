@@ -1,34 +1,39 @@
 <template>
   <div>
-    <el-row style="height: 575px; ">
-      <el-card class="box-card no-shadow" style="height: 575px; margin-top:5px; margin-bottom: 10px; background-color: #F2F3F5;">
+    <el-row style="height: 43vh">
+      <el-col :span="24" style="width: 100%;">
+        <el-card class="box-card no-shadow" style="height: 100%; background-color: #F2F3F5;">
         <template #header>
           <div class="card-header">
-            <span class="span-header" style="font-size: 30px; margin-left: 40px;">Quantitative Statistics</span>
-            <el-icon><Menu/></el-icon>
+            <span class="span-header" style="font-size: 1.7vw;">Statistics</span>
           </div>
         </template>
-        <el-row style="height: 25px;">
+        <el-row style="height: 4.3vh;">
               <div class="d-header">
-                <span class="span-header">Atom Percentage</span> 
+                <span class="span-header" style="font-size: 1.2vw;">Atom</span> 
               </div>
-            </el-row>
-        <el-row style="height: 220px;">
+        </el-row>
+        <el-row style="height: 15vh;">
+          <el-col :span="24" style="width: 100%;">
             <div id="static">
-              
             </div>
-          </el-row>
-          <el-row style="height: 25px;">
-              <div class="d-header">
-                <span class="span-header">Pattern Percentage</span> 
+          </el-col>
+
+        </el-row>
+          <el-row style="height: 4.3vh;">
+              <div class="d-header" >
+                <span class="span-header" style="font-size: 1.2vw;">Pattern</span> 
               </div>
             </el-row>
-        <el-row style="height: 220px;">
-            <div  id="pattern-static">
-              
-            </div>
+        <el-row style="height: 10vh">
+            <el-col :span="24" style="width: 100%;">
+              <div  id="pattern-static">
+              </div>
+            </el-col>
         </el-row>
       </el-card>
+      </el-col>
+
     </el-row>
     <!-- <el-divider>
     </el-divider> -->
@@ -70,15 +75,15 @@
     other_num -= (labels_num[0] + labels_num[1] + labels_num[3] + labels_num[4])
     const chartContainer = document.createElement('div');
     chartContainer.id = 'staticGraph1';
-    chartContainer.style.width = '400px';
-    chartContainer.style.height = '220px'; // 设置图表容器高度
+    chartContainer.style.width = '100%';
+    chartContainer.style.height = '15vh'; // 设置图表容器高度
     chartContainer.style.display = 'inline-block';
     document.getElementById('static').appendChild(chartContainer);
 
     const patternContainer = document.createElement('div');
     patternContainer.id = 'staticGraph2';
-    patternContainer.style.width = '400px';
-    patternContainer.style.height = '220px'; // 设置图表容器高度
+    patternContainer.style.width = '100%';
+    patternContainer.style.height = '15vh'; // 设置图表容器高度
     patternContainer.style.display = 'inline-block';
     document.getElementById('pattern-static').appendChild(patternContainer);
 
@@ -116,7 +121,7 @@
             "normal": {
             "show": true,
             "textStyle": {
-            "fontSize": 18 }}
+            "fontSize": 10 }}
           },
           radius: '60%'
         }
@@ -149,7 +154,7 @@
             "normal": {
             "show": true,
             "textStyle": {
-            "fontSize": 18 }}
+            "fontSize": 10 }}
           },
           radius: '60%'
         }
@@ -178,17 +183,24 @@
     border: none;
   }
   .d-header{
-    height: 25px;
-    width:99.5%;
+    height: 80%;
+    width:98%;
     text-align: center;
-    line-height: 25px;
+    line-height: 100%;
     background-color: #F2F3F5;
-    border: #000000 2px solid;
+    border: #000000 1px solid;
   }
   .span-header{
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 100%;
+    height: 100%;
     font-family: 'Times New Roman', Times, serif; 
     font-weight: bold;  
-    font-size: 30px;
+    font-size: 1.7vw;
+    line-height: 100%;
+    margin: auto
   }
   .box-card.no-shadow {
     box-shadow: none; /* 移除阴影 */
@@ -202,13 +214,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20px;
+    height: 10px;
   }
 
   .span-header{
     font-family: 'Times New Roman', Times, serif; 
     font-weight: bold;  
-    font-size: 24px;
+    font-size: 1.7vw;
+  }
+
+  .el-card{
+    --el-card-padding: 10px !important;
   }
 
 
