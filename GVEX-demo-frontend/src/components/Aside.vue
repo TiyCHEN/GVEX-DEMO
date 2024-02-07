@@ -1,71 +1,92 @@
 <template>
-  <el-row style="height: 250px; border-bottom: #606266 2px solid;">
-    <el-container>
-      <el-header class="aside-header"><el-icon :size="28" style="vertical-align: middle;"><Files /></el-icon> 
-        <span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> Graph Datasets </span>
-      </el-header>
-      <el-main class="aside-main">
-        <el-row style="height: 50px; margin-top: 20px;">
-          <el-button type="primary" @click="addDataset('Mutagenicity')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;">MUT</span></el-button>
-          <el-button type="primary" @click="addDataset('REDDIE-BINARY')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> RED </span></el-button>
-        </el-row>
-        <el-row style="height: 50px;">
-          <el-button type="primary" @click="addDataset('ENZYMES')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> ENZ </span></el-button>
-          <el-button type="primary" @click="addDataset('MALNET-TINY')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> MAL </span></el-button>
-        </el-row>
-        <el-row style="height: 50px;">
-          <el-button type="primary" @click="addDataset('PCQ')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> PCQ </span></el-button>
-          <el-button type="primary" @click="addDataset('SYN')" plain>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> SYN </span></el-button>
-        </el-row>
-        <!-- <el-row style="height: 50px;">
-          <el-button color="#626aef" style=" margin-top:30px; color:#606266" plain><el-icon><upload-filled /></el-icon>
-            <span style="font-size: 24px; font-weight: bold; vertical-align: middle;"> Upload Dataset </span></el-button>
-        </el-row> -->
-      </el-main>
-    </el-container>
-  </el-row>
+  <el-row style="height: 25%; border-bottom: #606266 2px solid;" class="custom-row">
+  <el-container style="height: 100%;">
+    <el-header class="aside-header">
+      <span style="font-size: 1.7vw; font-weight: bold; height: 100%; padding: 0; display: flex;justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */"> Graph Datasets </span>
+    </el-header>
+    <el-main class="aside-main">
+      <el-row style="height: 33%;" class="custom-row">
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('Mutagenicity')" plain style="width: 80%;">
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;">MUT</span>
+          </el-button>           
+        </el-col>
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('REDDIE-BINARY')" plain style="width: 80%; ">
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> RED </span>
+          </el-button>
+        </el-col>
+      </el-row>
+      <el-row style="height: 33%;" class="custom-row">
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('ENZYMES')" plain style="width: 80%; ">
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> ENZ </span>
+          </el-button>
+        </el-col>
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('MALNET-TINY')" plain style="width: 80%; "> 
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> MAL </span>
+          </el-button>
+        </el-col>
+      </el-row>
+      <el-row style="height: 33%;" class="custom-row">
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('PCQ')" plain style="width: 80%; ">
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> PCQ </span>
+          </el-button>
+        </el-col>
+        <el-col :span="12" style="height: 100%;" class="custom-col"> 
+          <el-button type="primary" @click="addDataset('SYN')" plain style="width: 80%; ">
+            <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> SYN </span>
+          </el-button>
+        </el-col>
+      </el-row>
+    </el-main>
+  </el-container>
+</el-row>
 
-  <el-row style="height: 950px;">
+  <el-row style="height: 75%;">
     <el-container>
-      <el-header class="aside-header"><el-icon :size="24" style="vertical-align: middle;"><Files /></el-icon> 
-        <span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> Algorithm Settings </span>
+      <el-header class="aside-header">
+        <span style="font-size: 1.7vw; font-weight: bold; vertical-align: middle;"> Algorithm Settings </span>
       </el-header>
       <el-main class="aside-main">
-        <el-row style="height: 50px; margin-top: 20px;">
-          <el-button type="warning" @click="addAlgorithm('AG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 200px; margin: auto; font-weight: bold; ">
-            <el-icon :size="20" style="vertical-align: middle;"><Tools /></el-icon><span style="font-size: 18px; font-weight: bold; vertical-align: middle;"> 
-              <span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> ApproxGVEX </span> </span></el-button>
+        <el-row style="height: 8%;">
+          <el-col :span="24" style="height: 100%;" class="custom-col">
+            <el-button type="warning" @click="addAlgorithm('AG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 90%; margin: auto; font-weight: bold; ">
+              <span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> ApproxGVEX </span> </el-button>
+          </el-col>
+
         </el-row>
-        <el-row style="height: 50px;">
-          <el-button type="danger" @click="showAlgorithm('SG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 200px; margin: auto; margin-top: 20px; font-weight: bold;">
-            <el-icon :size="20" style="vertical-align: middle;"><Tools /></el-icon><span style="font-size: 18px; font-weight: bold; vertical-align: middle;"> 
-              <span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> StreamGVEX </span> </span></el-button>
+        <el-row style="height: 8%;">
+          <el-col :span="24" style="height: 100%;" class="custom-col">
+            <el-button type="danger" @click="showAlgorithm('SG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 90%; margin: auto; font-weight: bold;">
+              <span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> StreamGVEX </span></el-button>
+          </el-col>
+
         </el-row>
-        <el-row>
-          <el-form :model="form" label-width="90px" class="custom-label" label-position="left" size="large" style="padding: 10px; margin-top: 40px; margin-left: 5px; margin-right: 5px; text-align: left; font-weight: bold; font-family: 'Times New Roman', Times, serif; border: #f3d19e 3px solid;">
-            <el-form-item label="Budget">
-              <el-input v-model="form.budget" style="width: 110px;"/>
-            </el-form-item>
-            <el-form-item label="Classes">
-                <!-- <el-button @click="openNestedForm" style="olor: #606266;" size="small">Ratio</el-button> -->
-                <el-button @click="openNestedForm" size="small" type="info" style="color: white;" :icon="Edit" circle />
-            </el-form-item>
-            <el-form-item label="Influence">
-              <el-input v-model="form.influence" style="width: 110px;"/>
-            </el-form-item>
-            <el-form-item label="Diversity">
-              <el-input v-model="form.diversity" style="width: 110px;"/>
-            </el-form-item>
-            <el-form-item label="Trade-Off">
-              <el-input v-model="form.gamma" style="width: 110px;"/>
-            </el-form-item>
-          </el-form>
+        <el-row style="margin-top: 1vh; height: 52%;">
+          <el-col :span="24" style="height: 100%;" class="custom-col">
+            <el-form :model="form" label-width="6vw" size="large" style="text-align: center; font-weight: bold; font-family: 'Times New Roman', Times, serif; border: #f3d19e 3px solid; width: 96%;">
+              <el-form-item label="Budget" class="custom-form-item">
+                <el-input v-model="form.budget" style="width: 90%; height: 5vh;" />
+              </el-form-item>
+              <el-form-item label="Classes" class="custom-form-item">
+                  <!-- <el-button @click="openNestedForm" style="olor: #606266;" size="small">Ratio</el-button> -->
+                  <el-button @click="openNestedForm" size="small" type="info" style="color: white;" :icon="Edit" circle />
+              </el-form-item>
+              <el-form-item label="Influence" class="custom-form-item">
+                <el-input v-model="form.influence" style="width: 90%; height: 5vh;"/>
+              </el-form-item>
+              <el-form-item label="Diversity" class="custom-form-item">
+                <el-input v-model="form.diversity" style="width: 90%; height: 5vh;"/>
+              </el-form-item>
+              <el-form-item label="Balance" class="custom-form-item">
+                <el-input v-model="form.gamma" style="width: 90%; height: 5vh;"/>
+              </el-form-item>
+            </el-form>
+          </el-col>
           <el-dialog v-model="dialogVisible">
             <el-form :model="nestedFormData" label-width="80px">
               <el-form-item label="Ratio 1 (%)">
@@ -81,26 +102,29 @@
             </el-form>
           </el-dialog>
         </el-row>
-        <el-row style="height: 150px;">
-          <el-progress type="dashboard" :percentage="percentage" :color="colors" style="padding-left: 60px; padding-top: 20px;">
-            <template #default="{ percentage }">
-              <span class="percentage-value">{{ percentage }}%</span>
-            </template>
-          </el-progress>
-          <el-button-group style="padding-left: 15px;">
-            <el-button :icon="Minus" @click="decrease" />
-            <el-button :icon="Plus" @click="increase" />
-          </el-button-group>
+        <!-- <el-row style="height: 16%;">
+          <el-col :span="24" style="height: 100%;" class="custom-col">
+            <el-progress type="dashboard" :percentage="percentage" :color="colors" style="padding-left: auto">
+              <template #default="{ percentage }">
+                <span class="percentage-value">{{ percentage }}%</span>
+              </template>
+            </el-progress>
+            <el-button-group style="padding-left: auto">
+              <el-button :icon="Minus" @click="decrease" />
+              <el-button :icon="Plus" @click="increase" />
+            </el-button-group>
+          </el-col>
+        </el-row> -->
+        <el-row style="height: 20%;">
           <el-button type="primary" @click="showOrigin()" style="font-family: 'Times New Roman', Times, serif; color:#FFFFFF; width: 200px; margin: auto; margin-top: 20px; font-weight: bold;"
-          ><el-icon :size="20" style="vertical-align: middle;"><View /></el-icon><span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> Show </span></el-button>
+          ><span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> Show </span></el-button>
           
           <el-button type="success" @click="generateResult()" style="font-family: 'Times New Roman', Times, serif; color:#FFFFFF; width: 200px; margin: auto; margin-top: 20px; font-weight: bold;"
-          ><el-icon :size="20" style="vertical-align: middle;"><SwitchButton /></el-icon><span style="font-size: 26px; font-weight: bold; vertical-align: middle;"> Generate </span></el-button>
+          ><span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> Generate </span></el-button>
         </el-row>
       </el-main>
     </el-container>
   </el-row>
-
 </template>
 
 
@@ -167,6 +191,9 @@
   ]
 
   const addDataset = (dataset) => {
+    if (dataset != "Mutagenicity") {
+      alert("Please use MUT dataset for demonstration.")
+    } 
     config_setting.dataset_name = dataset
     console.log(config_setting.dataset_name)
   }
@@ -209,49 +236,45 @@
 
 
 <style scoped>
-  .aside-header{
-    border: none;
-    height: 60px;
-    border-bottom: #333 2px solid;
-  }
-
-  .aside-main{
-    background-color: #F2F3F5;
-    color: #333;
-    font-size: 24px;
-  }
-  .dataset{
-    margin-top: 0px;
-    border: #333 2px solid;
-  }
-  
-  .el-button{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 10px;
-    color: #337ecc;
-    size: "large";
-    min-height: 45px;
-    min-width: 100px;
-    font: 18px bold;
-  }
-  .custom-label-item .el-form-item__label {
-  font-size: 30px !important; /* 覆盖默认样式 */
-  font-weight: bold; /* 修改字体粗细 */
+.aside-header {
+  border: none;
+  height: 5vh; 
+  border-bottom: #333 2px solid;
 }
 
-  .demo-progress .el-progress--line {
-    margin-bottom: 15px;
-    width: 350px;
-  }
-  .demo-progress .el-progress--circle {
-    margin-right: 15px;
-  }
-  .percentage-value {
-    display: block;
-    margin-top: 10px;
-    margin-left: 60px;
-    font-size: 28px;
-  }
+.aside-main {
+  background-color: #f2f3f5;
+  color: #333;
+  height: 16vh;
+  width: 100%;
+}
+
+.custom-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.custom-col {
+  box-sizing: border-box;
+}
+
+.el-button {
+  margin-left: 0; 
+  margin-right: 0; 
+  padding-top: auto; 
+  color: #337ecc;
+}
+
+.custom-form-item {
+  margin-top: 0.6vh;
+  height: 3.2vh !important;
+  font-weight: bold; 
+}
+
+.demo-progress .percentage-value {
+  margin-top: 1.5vw; 
+  margin-left: 4vw; 
+  font-size: 3.5vw;
+}
 
 </style>
