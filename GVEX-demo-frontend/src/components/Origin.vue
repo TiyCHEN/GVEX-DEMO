@@ -1,58 +1,59 @@
 <template>
-  <el-container class="container">
-    <el-header style="border: none; height: 42px; background-color: #FFFFFF; border-bottom: #000000 2px solid;">
+  <el-row style="height: 100%;">
+    <el-container style="height: 100%;">
+    <el-header style="border: none; height: 5%; background-color: #FFFFFF; border-bottom: #000000 2px solid;">
       <el-col :span="24">
         <div class="m-header">
           <span class="span-header">Input Graphs</span> 
         </div>
       </el-col>
     </el-header>
-    <el-main style="background-color: #FAFAFA;">
-      <el-row style="height: 600px; border-bottom: #606266 4px solid;">
-        <el-col :span="19">
+    <el-main style="background-color: #FAFAFA; height: 95%;">
+      <el-row style="height: 47%; border-bottom: #606266 4px solid;">
+        <el-col :span="19" style="height: 100%;">
           <!-- <el-pagination background layout="prev, pager, next" :total="20" style="margin: 3px;"/> -->
           <div class="main-page">
           </div>
         </el-col>
-        <el-col :span="5">
+        <el-col :span="5" style="height: 100%; width:100%">
           <div class="type-page">
-            <el-card class="box-card no-shadow" style="height: 565px; background-color: #F2F3F5;">
+            <el-card class="box-card no-shadow" style="height: 100%; background-color: #F2F3F5;">
               <template #header>
-                <div class="card-header">
-                  <span class="span-header">Dataset Information</span>
-                  <el-icon><Menu /></el-icon>
+                <div class="card-header" style="height: 2vh !important;">
+                  <span class="span-header">Information</span>
                 </div>
               </template>
-              <div class="text item"><span style="font-weight: bold; font-size: 24px;">Dataset Name:</span> <span style="margin-left: 3px;font-size: 22px;">{{ dataset_info.dataset_name}}</span></div>
-              <div class="text item"><span style="font-weight: bold; font-size: 24px;">Nodes (avg.):</span><span style="margin-left: 3px;font-size: 22px;">{{ dataset_info.nodes}}</span></div>
-              <div class="text item"><span style="font-weight: bold; font-size: 24px;">Edges (avg.):</span><span style="margin-left: 3px;font-size: 22px;">{{ dataset_info.edges}}</span></div>
-              <div class="text item"><span style="font-weight: bold; font-size: 24px;">Classes:</span><span style="margin-left: 3px;font-size: 22px;">{{ dataset_info.classes}}</span></div>
-              <div class="text item"><span style="font-weight: bold; font-size: 24px;">Domain: </span><span style="margin-left: 3px;font-size: 22px;">{{ dataset_info.domain}}</span></div>
+              <div class="text item"><span style="font-weight: bold; font-size: 1.2vw;">Name:</span> <span style="font-size: 1vw;">{{ dataset_info.dataset_name}}</span></div>
+              <div class="text item"><span style="font-weight: bold; font-size: 1.2vw;">Nodes:</span><span style="font-size: 1vw;">{{ dataset_info.nodes}}</span></div>
+              <div class="text item"><span style="font-weight: bold; font-size: 1.2vw;">Edges:</span><span style="font-size: 1vw;">{{ dataset_info.edges}}</span></div>
+              <div class="text item"><span style="font-weight: bold; font-size: 1.2vw;">Classes:</span><span style="font-size: 1vw;">{{ dataset_info.classes}}</span></div>
+              <div class="text item"><span style="font-weight: bold; font-size: 1.2vw;">Domain: </span><span style="font-size: 1vw;">{{ dataset_info.domain}}</span></div>
             </el-card>
           </div>
         </el-col>
       </el-row>
-      <el-row style="height: 600px;">
-        <el-col :span="18">
-          <el-row style="height: 40px;">
-            <div class="d-header">
-              <span class="span-header">Explanation Views</span> 
-            </div>
+      <el-row style="height: 49%;">
+        <el-col :span="18" style="width:100%">
+          <el-row style="height: 8%;">
+            <el-col :span="24" style="height: 100%;">
+              <div class="d-header">
+                <span class="span-header">Explanation Views</span> 
+              </div>
+            </el-col>
           </el-row>
-          <el-row style="height: 560px;">
+          <el-row style="height: 90%;">
             <div class="explain-page" id="explain">
-              <el-row style="height: 180px;">
+              <el-row style="height: 30%;">
                 <div class="explain-pattern-page" id="explain-pattern">
                 </div>             
               </el-row>
               <el-divider style="border-top: 1px solid black;"/>
-              <el-row style="height: 320px;">
+              <el-row style="height: 60%;">
                 <div class="explain-subgraph-page" id="explain-subgraph">
                 </div>
               </el-row>
             </div>
           </el-row>
-
         </el-col>
         <el-col :span="6">
             <Statistic :staticData="staticData"/>
@@ -61,6 +62,8 @@
     </el-main>
  
   </el-container>
+  </el-row>
+  
 </template>
 
 
@@ -171,8 +174,8 @@
       chartContainer.id = 'originGraph' + idx + '-' + i;
       console.log(chartContainer.id)
       // chartContainer.style.width = sigle_length + '%';
-      chartContainer.style.width = '180px';
-      chartContainer.style.height = '210px'; // 设置图表容器高度
+      chartContainer.style.width = '20%';
+      chartContainer.style.height = '45%'; // 设置图表容器高度
       chartContainer.style.display = 'inline-block';
       const set_name = '.main-page-' + idx
       console.log(set_name)
@@ -197,7 +200,7 @@
             },
             roam: true,
             force: {
-              repulsion: 15
+              repulsion: 5
             },
             animation: true,
             itemStyle: {
@@ -224,8 +227,8 @@
 
   const displayOrigin = () => {
     const current_graphs = show_graphs.slice((currentPage.value - 1) * 14, currentPage.value * 14)
-    const current_graphs_1 = current_graphs.slice(0, 7)
-    const current_graphs_2 = current_graphs.slice(7, 14)
+    const current_graphs_1 = current_graphs.slice(0, 5)
+    const current_graphs_2 = current_graphs.slice(5, 10)
     clearChild()
     console.log(current_graphs)
     renderOrigin(current_graphs_1, 1)
@@ -281,8 +284,9 @@
         chartContainer.id = 'explainGraph' + i;
         const sigle_length = 100 / length;
         chartContainer.style.width = sigle_length + '%';
-        chartContainer.style.height = '220px'; // 设置图表容器高度
+        chartContainer.style.height = '80%'; // 设置图表容器高度
         chartContainer.style.display = 'inline-block';
+        
         document.getElementById('explain-subgraph').appendChild(chartContainer);
 
         // 使用ECharts渲染图表
@@ -304,7 +308,7 @@
               },
               roam: true,
               force: {
-                repulsion: 50
+                repulsion: 8
               },
               animation: true,
               itemStyle: {
@@ -345,7 +349,7 @@
         chartContainer.id = 'explainPattern' + i;
         const sigle_length = 100 / length;
         chartContainer.style.width = sigle_length + '%';
-        chartContainer.style.height = '140px'; // 设置图表容器高度
+        chartContainer.style.height = '100%'; // 设置图表容器高度
         chartContainer.style.display = 'inline-block';
         document.getElementById('explain-pattern').appendChild(chartContainer);
 
@@ -368,7 +372,7 @@
               },
               roam: true,
               force: {
-                repulsion: 150
+                repulsion: 5
               },
               animation: true,
               itemStyle: {
@@ -415,7 +419,7 @@
 
 <style scoped>
   .container{
-    height: 94.2vh;
+    /* height: 94.2vh; */
     border-right: #606266 4px solid;
   }
   /* .m-header{
@@ -427,33 +431,40 @@
   } */
 
   .m-header{
-    height: 40px;
+    height: 5vh;
     width:100%;
     text-align: center;
-    line-height: 40px;
+    line-height: 5vh;
     background-color: #F2F3F5;
     /* border-right: #000000 2px solid; */
     border-bottom: #000000 2px solid;
   }
 
   .d-header{
-    height: 40px;
     width:99.5%;
+    height: 100%;
     text-align: center;
-    line-height: 40px;
+    line-height: 100%;
     background-color: #F2F3F5;
     border-right: #000000 2px solid;
     border-bottom: #000000 2px solid;
   }
   .span-header{
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 100%;
+    height: 100%;
     font-family: 'Times New Roman', Times, serif; 
     font-weight: bold;  
-    font-size: 30px;
+    font-size: 1.7vw;
+    line-height: 100%;
+    margin: auto
   }
   .main-page{
-    margin:10px 4px;
-    height: 95%;
-    width: 99%;
+    margin:0.2vh;
+    height: 98%;
+    width: 100%;
     background-color: #F2F3F5;
     border: #000000 2px solid;
     border-radius: 10px;
@@ -480,14 +491,15 @@
   }
 
   .type-page{
-    height: 95%;
-    margin: 10px auto;
+    height: 98%;
+    margin-top:0.2vh;
+    width: 95%;
   }
 
   .explain-page{
     height: 95%;
     width: 99%;
-    margin: 10px auto;
+    margin: 5px auto;
     background-color: #F2F3F5;
     border: #000000 2px solid;
     border-radius: 10px;
@@ -496,7 +508,7 @@
   .explain-pattern-page{
     height: 95%;
     width: 98%;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     background-color: #F2F3F5;
     overflow: hidden;
   }
@@ -504,7 +516,7 @@
   .explain-subgraph-page{
     height: 95%;
     width: 98%;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     background-color: #F2F3F5;
     overflow: hidden;
   }
@@ -519,24 +531,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20px;
   }
 
   .text {
-    font-size: 20px;
-    height: 80px; /* 设置每个item的高度为40px */
-    line-height: 80px; /* 垂直居中文本内容 */
+    font-size: 1.3vw;
+    height: 90%; /* 设置每个item的高度为40px */
     text-align: left;
-    
+    vertical-align:auto;
+    justify-content: center;
     font-family: 'Times New Roman', Times, serif;
   }
 
   .item {
-    margin: 10px;
-    padding-left: 5px;
+    margin-bottom: 0.4vh;
     border: #eebe77 3px solid ;
+    padding: 0;
     border-radius: 10px;
-    height: 80px;
+    height: 5vh;
+    width: 100%;
   }
 
   .box-card.no-shadow {
@@ -544,7 +556,9 @@
   }
 
   .box-card {
+    /* --el-card-padding: 10px; */
     width: 98%; /* 占据100%宽度 */
+    margin-left: 0.6vw;
     padding: 0; /* 移除内边距 */
   }
 
