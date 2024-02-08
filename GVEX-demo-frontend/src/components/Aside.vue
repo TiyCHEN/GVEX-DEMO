@@ -7,40 +7,28 @@
     </el-header>
     <el-main class="aside-main">
       <el-row style="height: 33%;" class="custom-row">
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('Mutagenicity')" plain style="width: 80%;">
+          <el-button type="primary" @click="addDataset('Mutagenicity')" plain style="width: 40%; margin: auto">
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;">MUT</span>
           </el-button>           
-        </el-col>
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('REDDIE-BINARY')" plain style="width: 80%; ">
+          <el-button type="primary" @click="addDataset('REDDIE-BINARY')" plain style="width: 40%; margin: auto">
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> RED </span>
           </el-button>
-        </el-col>
       </el-row>
       <el-row style="height: 33%;" class="custom-row">
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('ENZYMES')" plain style="width: 80%; ">
+          <el-button type="primary" @click="addDataset('ENZYMES')" plain style="width: 40%; margin: auto ">
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> ENZ </span>
           </el-button>
-        </el-col>
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('MALNET-TINY')" plain style="width: 80%; "> 
+          <el-button type="primary" @click="addDataset('MALNET-TINY')" plain style="width: 40%; margin: auto "> 
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> MAL </span>
           </el-button>
-        </el-col>
       </el-row>
       <el-row style="height: 33%;" class="custom-row">
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('PCQ')" plain style="width: 80%; ">
+          <el-button type="primary" @click="addDataset('PCQ')" plain style="width: 40%; margin: auto ">
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> PCQ </span>
           </el-button>
-        </el-col>
-        <el-col :span="12" style="height: 100%;" class="custom-col"> 
-          <el-button type="primary" @click="addDataset('SYN')" plain style="width: 80%; ">
+          <el-button type="primary" @click="addDataset('SYN')" plain style="width: 40%; margin: auto ">
             <span style="font-size: 1.3vw; font-weight: bold; vertical-align: middle;"> SYN </span>
           </el-button>
-        </el-col>
       </el-row>
     </el-main>
   </el-container>
@@ -49,22 +37,17 @@
   <el-row style="height: 75%;">
     <el-container>
       <el-header class="aside-header">
-        <span style="font-size: 1.7vw; font-weight: bold; vertical-align: middle;"> Algorithm Settings </span>
+        <span style="font-size: 1.7vw; font-weight: bold; height: 100%; padding: 0; display: flex;justify-content: center; /* 水平居中 */
+        align-items: center;"> Algorithm Settings </span>
       </el-header>
       <el-main class="aside-main">
         <el-row style="height: 8%;">
-          <el-col :span="24" style="height: 100%;" class="custom-col">
             <el-button type="warning" @click="addAlgorithm('AG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 90%; margin: auto; font-weight: bold; ">
               <span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> ApproxGVEX </span> </el-button>
-          </el-col>
-
         </el-row>
         <el-row style="height: 8%;">
-          <el-col :span="24" style="height: 100%;" class="custom-col">
             <el-button type="danger" @click="showAlgorithm('SG')" style="font-family: 'Times New Roman', Times, serif; color:black; width: 90%; margin: auto; font-weight: bold;">
-              <span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> StreamGVEX </span></el-button>
-          </el-col>
-
+            <span style="font-size: 1.5vw; font-weight: bold; vertical-align: middle;"> StreamGVEX </span></el-button>
         </el-row>
         <el-row style="margin-top: 1vh; height: 52%;">
           <el-col :span="24" style="height: 100%;" class="custom-col">
@@ -255,7 +238,7 @@
 }
 
 .custom-col {
-  box-sizing: border-box;
+  margin: 0;
 }
 
 .el-button {
