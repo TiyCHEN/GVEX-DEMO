@@ -38,4 +38,4 @@ flask run
 
 ## (3) open the web page
 
-[http://127.0.0.1:5173](http://127.0.0.1:5173/)
+After you deploy the project, you can click [http://127.0.0.1:5173](http://127.0.0.1:5173/).
